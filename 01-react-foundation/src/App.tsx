@@ -1,6 +1,10 @@
+import { CounterWithHook } from './components';
 import { 
+    //BasicFunctions,
+    //Counter,
 //BasicTypes, 
-ObjectLiterals } from './typescript';
+//ObjectLiterals
+ } from './typescript';
 
 function App() {
   
@@ -8,7 +12,10 @@ function App() {
     <main>
       <h1>Introducción a TS - React</h1>
         {/* <BasicTypes/> */}
-        <ObjectLiterals/>
+        {/* <ObjectLiterals/> */}
+        {/* <BasicFunctions/> */}
+        {/* <Counter/> */}
+        <CounterWithHook/>
     </main>
   )
 }
