@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useEffect } from "react"
 
 export const UsersPage = () => {
@@ -5,14 +6,16 @@ export const UsersPage = () => {
     // To assure side-effect doesn't triggers any issue at the app
     useEffect(() => {
 
-        fetch("https://reqres.in/api/users?page=2", {
+        axios.get('https://reqres.in/api/users?page=2')
+            .then( resp => console.log( resp.data))
+        /* fetch("https://reqres.in/api/users?page=2", {
             headers: {
                 "x-api-key": import.meta.env.VITE_REQRES_API_KEY,
             },
         })
             .then((r) => r.json())
             .then((data) => console.log(data))
-            .catch(console.error);
+            .catch(console.error); */
 
     }, [])
     return (
