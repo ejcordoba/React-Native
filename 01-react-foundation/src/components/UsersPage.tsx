@@ -2,21 +2,26 @@ import axios from "axios"
 import { useEffect } from "react"
 import type { ReqResUserListResponse } from "../interfaces"
 
+const loadUsers = async() => {
+    try {
+        const { data } = await axios.get<ReqResUserListResponse>('https://reqres.in/api/users,',{
+        headers: {
+          "x-api-key": import.meta.env.VITE_REQRES_API_KEY,
+        },
+      });
+        return data.data;
+    } catch (error) {
+        console.log(error)
+        return [];
+    }
+}
+
 export const UsersPage = () => {
     // Data will trigger twice due to <React.StrictMode></React.StrictMode> at Main.tsx
     // To assure side-effect doesn't triggers any issue at the app
     useEffect(() => {
 
-        axios.get<ReqResUserListResponse>('https://reqres.in/api/users?page=2')
-            .then( resp => console.log( resp.data.data[0]))
-        /* fetch("https://reqres.in/api/users?page=2", {
-            headers: {
-                "x-api-key": import.meta.env.VITE_REQRES_API_KEY,
-            },
-        })
-            .then((r) => r.json())
-            .then((data) => console.log(data))
-            .catch(console.error); */
+       loadUsers().then(users => console.log(users));
 
     }, [])
     return (
