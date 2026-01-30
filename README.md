@@ -117,3 +117,7 @@ See you in the next lesson 🚀
 - Developers who already know **React** and want to move into mobile development
 - Developers with React Native experience who want to **improve app design and architecture**
 - Anyone looking for **step-by-step guides** to publish apps on the Google Play Store and Apple App Store
+
+## Additional resources
+
+- [React Basics](https://github.com/Klerith/RN-reforzamiento-react)
