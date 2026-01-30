@@ -27,7 +27,6 @@ export const UsersPage = () => {
     const [users, setUsers] = useState<User[]>([]);
     const currentPageRef = useRef(1);
     useEffect(() => {
-
        loadUsers(currentPageRef.current)
         .then(users => setUsers(users));
     //.then(setUsers) <--- we can do it this way, sending the function, then it set all the arguments in 
