@@ -10,16 +10,16 @@ interface Props {
 export const PrimaryButton = ({ label, onPress, onLongPress } : Props) => {
   return (
     <Pressable 
-                onPress={() => onPress && onPress()}
-                onLongPress={ ()=> onLongPress && onLongPress()}
-                style={({ pressed }) => [
-                    styles.button,
-                    pressed && styles.buttonPressed
-                ]}
-            >
-                <Text style={{
-                    color: Platform.OS === 'android' ? 'white' : 'grey'}}>{label}</Text>
-            </Pressable>
+        onPress={() => onPress && onPress()}
+        onLongPress={ ()=> onLongPress && onLongPress()}
+        style={({ pressed }) => [
+            styles.button,
+            pressed && styles.buttonPressed
+        ]}
+    >
+        <Text style={{
+            color: Platform.OS === 'android' ? 'white' : 'grey'}}>{label}</Text>
+    </Pressable>
   )
 }
 const styles = StyleSheet.create({
