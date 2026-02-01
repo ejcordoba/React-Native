@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Text, View } from 'react-native';
 import { globalStyles } from '../theme/global.styles';
 import { FAB } from 'react-native-paper';
+import Icon from '@react-native-vector-icons/ionicons';
 
 
 export const CounterM3Screen = () => {
@@ -10,8 +11,9 @@ export const CounterM3Screen = () => {
   return (
     <View style={globalStyles.centerContainer}>
         <Text style={globalStyles.title}>{count}</Text>
+        {/* <Icon name="accessibility-outline" size={25}/> */}
         <FAB
-            icon="plus"
+            icon="add-outline"
             style={globalStyles.fab}
             onPress={()=> setCount(count + 1)}
             onLongPress={()=>setCount(0)}
